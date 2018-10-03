@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour {
+public class Movement : MonoBehaviour
+{
 
     //public CharacterController player;
     public float speed;
@@ -12,18 +13,21 @@ public class Movement : MonoBehaviour {
     public float xRot;
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
 
 
         yRot += Input.GetAxis("Mouse X") * mouseSensitivity;
-      //  xRot += Input.GetAxis("Mouse Y") * mouseSensitivity;
-        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, yRot, transform.localEulerAngles.z);
+        xRot += Input.GetAxis("Mouse Y") * mouseSensitivity;
+     //   transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, yRot, transform.localEulerAngles.z);
+        transform.localEulerAngles = new Vector3(xRot, yRot, transform.localEulerAngles.z);
 
         isMoving = false;
 

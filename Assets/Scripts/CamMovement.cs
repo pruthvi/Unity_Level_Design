@@ -22,9 +22,9 @@ public class CamMovement : MonoBehaviour {
 	void Update ()
 	{
         yRot += Input.GetAxis("Mouse X") * mouseSensitivity;
-       // xRot += Input.GetAxis("Mouse Y") * mouseSensitivity;
+        xRot -= Input.GetAxis("Mouse Y") * mouseSensitivity;
         //   transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, yRot, transform.localEulerAngles.z);
-        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, yRot, transform.localEulerAngles.z);
+        transform.localEulerAngles = new Vector3(xRot, yRot, transform.localEulerAngles.z);
       //  playerCamera.transform.localEulerAngles = new Vector3(xRot, transform.localEulerAngles.y, transform.localEulerAngles.z);
 
 
